@@ -18,6 +18,8 @@ struct dataChangeDetail: View {
         .padding()
         .frame(maxWidth: .infinity)
         .background(Color(.tertiarySystemGroupedBackground))
+        .cornerRadius(16)
+        .transition(.dropDown)
     }
 }
 

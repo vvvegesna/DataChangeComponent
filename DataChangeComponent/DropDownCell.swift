@@ -18,22 +18,6 @@ extension AnyTransition {
     }
 }
 
-struct DetailViewBuilder<Content: View>: View {
-    let content: Content
-    
-    init(@ViewBuilder content: () -> Content) {
-        self.content = content()
-    }
-    
-    var body: some View {
-        content
-            .padding()
-            .background(Color(.tertiarySystemGroupedBackground))
-            .cornerRadius(16)
-            .transition(.dropDown)
-    }
-}
-
 struct columnsFormate: ViewModifier {
     var isValue: Bool
     func body(content: Content) -> some View {
@@ -71,9 +55,7 @@ struct DropDownCell: View {
             }
             
             if self.showTransition {
-                DetailViewBuilder {
-                    dataChangeDetail()
-                }
+                dataChangeDetail()
             }
             Spacer()
         }
@@ -82,6 +64,7 @@ struct DropDownCell: View {
     var rowColumn1: some View {
         Text("DC-0000003")
             .font(.system(size: 14))
+            .foregroundColor(.accentColor)
     }
     var rowColumn2: some View {
         HStack(spacing: 8) {
