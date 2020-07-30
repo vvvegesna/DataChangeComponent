@@ -11,14 +11,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         List {
-//            DropDownCell()
-//            DropDownCell()
-//            DropDownCell()
-//            DropDownCell()
-            addingSubView()
-            addingSubView()
-            addingSubView()
-            addingSubView()
+            DropDownCell()
+            DropDownCell()
+            DropDownCell()
+            DropDownCell()
         }
     }
 }
