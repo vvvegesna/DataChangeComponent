@@ -14,7 +14,8 @@
 		8307508924D0A95D004F7C00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8307508824D0A95D004F7C00 /* Preview Assets.xcassets */; };
 		8307508C24D0A95D004F7C00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8307508A24D0A95D004F7C00 /* LaunchScreen.storyboard */; };
 		8307509F24D21497004F7C00 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8307509E24D21497004F7C00 /* DropDownCell.swift */; };
-		830750A124D23F7C004F7C00 /* dataChangeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830750A024D23F7C004F7C00 /* dataChangeDetail.swift */; };
+		830750A124D23F7C004F7C00 /* DataChangeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830750A024D23F7C004F7C00 /* DataChangeDetail.swift */; };
+		83304F2C24D8B3E80043461F /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83304F2B24D8B3E80043461F /* GridLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		8307508B24D0A95D004F7C00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8307508D24D0A95D004F7C00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8307509E24D21497004F7C00 /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
-		830750A024D23F7C004F7C00 /* dataChangeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataChangeDetail.swift; sourceTree = "<group>"; };
+		830750A024D23F7C004F7C00 /* DataChangeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChangeDetail.swift; sourceTree = "<group>"; };
+		83304F2B24D8B3E80043461F /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,8 @@
 				8307507F24D0A95A004F7C00 /* AppDelegate.swift */,
 				8307508124D0A95A004F7C00 /* SceneDelegate.swift */,
 				8307509E24D21497004F7C00 /* DropDownCell.swift */,
-				830750A024D23F7C004F7C00 /* dataChangeDetail.swift */,
+				830750A024D23F7C004F7C00 /* DataChangeDetail.swift */,
+				83304F2B24D8B3E80043461F /* GridLayout.swift */,
 				8307508324D0A95A004F7C00 /* ContentView.swift */,
 				8307508524D0A95D004F7C00 /* Assets.xcassets */,
 				8307508A24D0A95D004F7C00 /* LaunchScreen.storyboard */,
@@ -155,7 +158,8 @@
 				8307508024D0A95A004F7C00 /* AppDelegate.swift in Sources */,
 				8307509F24D21497004F7C00 /* DropDownCell.swift in Sources */,
 				8307508224D0A95A004F7C00 /* SceneDelegate.swift in Sources */,
-				830750A124D23F7C004F7C00 /* dataChangeDetail.swift in Sources */,
+				83304F2C24D8B3E80043461F /* GridLayout.swift in Sources */,
+				830750A124D23F7C004F7C00 /* DataChangeDetail.swift in Sources */,
 				8307508424D0A95A004F7C00 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

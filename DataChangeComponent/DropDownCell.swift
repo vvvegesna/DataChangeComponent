@@ -18,36 +18,41 @@ extension AnyTransition {
     }
 }
 
-struct columnsFormate: ViewModifier {
-    var isValue: Bool
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: 12))
-            .foregroundColor(isValue ? nil : .secondary)
-            .padding(3)
-    }
-}
-
 extension View {
     func applyStyling(isValue: Bool) -> some View {
         return self.modifier(columnsFormate(isValue: isValue))
     }
 }
 
+struct columnsFormate: ViewModifier {
+    var isValue: Bool
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 12))
+            .foregroundColor(isValue ? nil : .secondary)
+            .padding(5)
+    }
+}
+
 struct DropDownCell: View {
     @State var showTransition = false
+    //@State var performNavigation = false
     
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
+            HStack(spacing: 5) {
                 Button(action: { self.performTransition() }) {
                     Image(systemName: "chevron.right")
+                        .imageScale(.small)
                         .rotationEffect(.degrees(self.showTransition ? 90 : 0))
+                        .padding(.horizontal, 3)
+                }.buttonStyle(BorderlessButtonStyle())
+                NavigationLink(destination: Text("Darling!")) {
+                    Text("DC-0000003")
+                        .font(.system(size: 14))
                 }
-                self.rowColumn1
                 Spacer()
             }
-            
             VStack(alignment: .leading) {
                 self.rowColumn2
                 self.rowColumn3
@@ -55,17 +60,14 @@ struct DropDownCell: View {
             }
             
             if self.showTransition {
-                dataChangeDetail()
+                DataChangeDetail()
             }
             Spacer()
-        }
-        .padding()
+        }.buttonStyle(BorderlessButtonStyle())
+            .padding(.horizontal)
+        
     }
-    var rowColumn1: some View {
-        Text("DC-0000003")
-            .font(.system(size: 14))
-            .foregroundColor(.accentColor)
-    }
+    
     var rowColumn2: some View {
         HStack(spacing: 8) {
             Text("Status")
@@ -98,8 +100,23 @@ struct DropDownCell: View {
     }
 }
 
+struct GenericListFooterItem {
+    let keyValueData : [(key: String, value: String)]
+    
+    init(keyValueData: [(key: String, value: String)]) {
+        self.keyValueData = keyValueData
+    }
+}
+
 struct DropDownCell_Previews: PreviewProvider {
     static var previews: some View {
-        DropDownCell()
+        NavigationView {
+            ScrollView {
+                VStack {
+                    DropDownCell()
+                    DropDownCell()
+                }
+            }
+        }
     }
 }

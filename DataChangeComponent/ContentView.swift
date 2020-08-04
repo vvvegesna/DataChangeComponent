@@ -10,11 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        List {
-            DropDownCell()
-            DropDownCell()
-            DropDownCell()
-            DropDownCell()
+        NavigationView {
+            ScrollView(.vertical) {
+                VStack {
+                    DropDownCell()
+                    DropDownCell()
+                }
+            }
+            .navigationBarTitle("DataChanges history")
         }
     }
 }
