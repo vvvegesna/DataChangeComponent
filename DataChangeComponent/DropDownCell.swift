@@ -29,43 +29,60 @@ struct columnsFormate: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.system(size: 12))
-            .foregroundColor(isValue ? nil : .secondary)
+            .foregroundColor(isValue ? .primary : .secondary)
             .padding(5)
+    }
+}
+
+struct RowColumnBuiler: View {
+    var fieldName: String
+    var fieldValue: String
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(fieldName)
+                .applyStyling(isValue: false)
+                .background(Color.green)
+            Text(fieldValue)
+                .applyStyling(isValue: true)
+                .background(Color.green)
+        }
+        .background(Color.red)
+        .fixedSize(horizontal: false, vertical: true)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 3)
     }
 }
 
 struct DropDownCell: View {
     @State var showTransition = false
-    //@State var performNavigation = false
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack(spacing: 5) {
-                Button(action: { self.performTransition() }) {
+        VStack {
+            Button(action: { self.performTransition() }) {
+                HStack {
+                    VStack(alignment: .leading) {
+                        self.rowColumn2
+                        self.rowColumn3
+                        self.rowColumn4
+                        NavigationLink(destination: Text("Darling")) {
+                            Text("Hit me")
+                                .font(.system(size: 12))
+                        }
+                    }
+                    Spacer()
+                    
                     Image(systemName: "chevron.right")
-                        .imageScale(.small)
+                        .imageScale(.large)
                         .rotationEffect(.degrees(self.showTransition ? 90 : 0))
-                        .padding(.horizontal, 3)
-                }.buttonStyle(BorderlessButtonStyle())
-                NavigationLink(destination: Text("Darling!")) {
-                    Text("DC-0000003")
-                        .font(.system(size: 14))
+                        .padding(.horizontal, 5)
                 }
-                Spacer()
             }
-            VStack(alignment: .leading) {
-                self.rowColumn2
-                self.rowColumn3
-                self.rowColumn4
-            }
-            
             if self.showTransition {
                 DataChangeDetail()
             }
-            Spacer()
-        }.buttonStyle(BorderlessButtonStyle())
-            .padding(.horizontal)
-        
+        }
+        .padding(.horizontal)
     }
     
     var rowColumn2: some View {

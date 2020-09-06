@@ -16,13 +16,13 @@ struct GridLayout<Content: View>: View {
     var body: some View {
         VStack {
             ForEach(0 ..< rows, id: \.self) { row in
-                HStack {
+                HStack(alignment: .top) {
                     ForEach(0 ..< self.columns, id: \.self) { column in
                         self.content(self.getItemPosition(row: row, column: column))
                     }
-                }
+                }.background(Color.blue)
             }
-        }
+        }.background(Color.yellow)
     }
 
     init(rows: Int, columns: Int, @ViewBuilder content: @escaping (Int) -> Content) {
